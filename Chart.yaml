@@ -1,0 +1,3 @@
+apiVersion: v2
+name: hostinfo
+version: 1.0.0
