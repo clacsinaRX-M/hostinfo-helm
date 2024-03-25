@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hostinfo
+  name: {{ .Release.Name }}-hostinfo
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: hostinfo
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: hostinfo
+    spec:
+      containers:
+      - image: rxmllc/hostinfo
+        name: hostinfo
+        ports:
+        - containerPort: 9898
